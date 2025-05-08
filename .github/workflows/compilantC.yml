@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: wite
+      contents: write
 
     steps: 
       - name: Check Out
