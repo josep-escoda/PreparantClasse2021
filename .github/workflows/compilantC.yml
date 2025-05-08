@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: compila
-        run: gcc -o f1 f2.c
+        run: gcc -o f1 f1.c
 
       - name: verifica
         run: bash -c "[[ -x f1 ]]"
