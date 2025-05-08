@@ -1,0 +1,30 @@
+name: compilantC
+
+on: 
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: wite
+
+    steps: 
+      - name: Check Out
+        uses: actions/checkout@v4
+
+      - name: compila
+        run: gcc -o f1 f2.c
+
+      - name: verifica
+        run: bash -c "[[ -x f1 ]]"
+
+      - name: executa
+        run: bash -c "./f1 > out.txt"
+
+      - name: fitxer sortida al repo
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Provan auto commit
